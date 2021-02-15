@@ -37,7 +37,7 @@ namespace DockerHubHookHandler.Controllers
             string token = _config["TELEGRAM_TOKEN"];
             botClient = new TelegramBotClient(token);
 
-            string msg = $"Le BUILD du repos {payload.repository.name} a été effectué avec succès.\nDate: {DateTime.Now.ToString("dddd dd MMMM yyyy, HH:mm:ss")}";
+            string msg = $"Le BUILD du repos {payload.repository.name} a été effectué avec succès.\nDate: {DateTime.Now:dd MM yyyy, HH:mm:ss}";
             msg = $"{msg}\nDescription: {payload.repository.full_description}";
 
             bool flag = true;
